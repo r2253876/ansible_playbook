@@ -1,0 +1,10 @@
+---
+- hosts: all
+  user: ansible
+  become: true
+  connection: ssh
+  tasks:
+    - name: Install packages
+      yum:
+        name: ['git','which','docker','mysql','tree','wget','httpd','java']
+        state: installed

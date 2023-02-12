@@ -1,0 +1,15 @@
+---
+- hosts: webservers
+  become: true
+  user: ansible
+  connection: ssh
+  tasks:
+    - name: Install java on redhat
+      yum:
+        name: java
+        state: installed
+
+        when: ansible_os_family == "redhat"
+    - name: install java on debian
+      apt:
+

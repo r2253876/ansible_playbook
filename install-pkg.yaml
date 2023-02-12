@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  user: ansible
+  become: true
+  tasks:
+    - name: installing docker software
+      yum:
+        name: docker
+        state: present

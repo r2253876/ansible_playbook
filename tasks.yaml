@@ -1,0 +1,15 @@
+---
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  
+  tasks:
+        - name: intall httpd
+          yum:
+               name: httpd
+               state: latest
+        - name: run httpd
+          service:
+               name: httpd
+               state: started
